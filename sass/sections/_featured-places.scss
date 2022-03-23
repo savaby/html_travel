@@ -1,0 +1,57 @@
+.featured-places {
+    // No need to use extra style, it's a basic section
+
+    .featured-items {
+        // Mobile first, one column of blocks
+        margin: 30px 0;
+
+        @include md {
+            // Use grid mixin, display grid of 2 columns with 30px gap
+            @include grid(2, 30px);
+        }
+
+        @include lg {
+            @include grid(3, 40px);
+        }
+
+        .item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eeeeee;
+
+            .image {
+                position: relative;
+                overflow: hidden;
+
+                .btn {
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    // span all width
+                    width: 100%;
+                    margin-bottom: -35px;
+                    transition: margin 0.4s ease;
+                }
+
+                &:hover .btn {
+                    margin: -2px 0;
+                }
+            }
+
+            h4 {
+                margin: 20px 0 10px;
+            }
+
+            span {
+                display: block;
+                margin: 10px 0;
+                color: #666666;
+            }
+
+            p {
+                color: #777777;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+        }
+    }
+}

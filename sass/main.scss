@@ -1,0 +1,60 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+@import "./utilities";
+@import "./animations";
+
+@import "./sections/header";
+@import "./sections/sidebar";
+
+// Base styles for section
+main {
+    @include lg {
+        // Move to right on value of menu width
+        margin-left: 300px;
+        padding-top: $container-padding-lg;
+    }
+
+    section {
+        padding: $container-padding;
+    }
+
+    @include md {
+        padding: 30px $container-padding-md;
+    }
+
+    @include lg {
+        padding: 30px $container-padding-lg;
+    }
+
+    // Unified section title
+    .section-title {
+        @include flex(flex-start, center);
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        line-height: 1.5;
+
+        h1 {
+            margin-right: 100px;
+            font-size: 30px;
+
+            span {
+                display: block;
+                color: $primary-color;
+            }
+        }
+
+        p {
+            width: 300px;
+            font-size: 15px;
+        }
+    }
+}
+
+@import "./sections/featured-places";
+@import "./sections/recent-projects";
+@import "./sections/company-presentation";
+@import "./sections/blog-entries";
+@import "./sections/google-maps";
+@import "./sections/contact-sentra";
+@import "./sections/footer";
